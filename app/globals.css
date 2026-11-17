@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FAF7F2;
+  --foreground: #2A1D15;
+}
+
+/* Subtle vintage parchment background */
+body {
+  color: var(--foreground);
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#E8DEC8 0.65px, transparent 0.65px), radial-gradient(#E8DEC8 0.65px, #FAF7F2 0.65px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Classic vintage text selection */
+::selection {
+  background-color: #3A281E;
+  color: #FAF6EE;
+}
+
+/* Antique Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4EFEA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C7B5A3;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8C6F56;
+}
+
+/* Subtle vintage ornament divider */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #C59B4B;
+  margin: 1.5rem 0;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, #8C6F56, transparent);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
